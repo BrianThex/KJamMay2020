@@ -13,9 +13,6 @@ namespace ToLC.Network
         private void Start()
         {
             playerUser = PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity);
-
-            Camera cam = Camera.main;
-            cam.transform.SetParent(playerUser.transform);
         }
     }
 }
