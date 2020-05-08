@@ -18,7 +18,7 @@ namespace ToLC.Network
 
         private void Start() => SetUpInputField();
 
-		#region MainMenu
+		#region MainMenu / Initiate Login
 		private void SetUpInputField()
         {
             if (!PlayerPrefs.HasKey(PlayerPrefNameKey)) { return; }

@@ -1,6 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ToLC.DontDestroyOnLoad
+    - ToLC.Enemy.AI
     - ToLC.Menues.MainMenu
     - ToLC.Network.NetworkManager
     - ToLC.Network.PlayerSpawner
@@ -62,20 +64,26 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11536}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 11790}
+      Script: {instanceID: 11792}
     - Class: 114
-      Script: {instanceID: 12140}
+      Script: {instanceID: 12142}
     - Class: 114
-      Script: {instanceID: 13078}
+      Script: {instanceID: 13080}
+    - Class: 114
+      Script: {instanceID: 20238}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
+    - Class: 195
+      Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 238
       Script: {instanceID: 0}
     Assets/ScriptTesting/ScriptTestingMenu.unity:
     - Class: 1
@@ -109,45 +117,49 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11176}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11186}
+      Script: {instanceID: 11188}
     - Class: 114
-      Script: {instanceID: 11364}
+      Script: {instanceID: 11366}
     - Class: 114
-      Script: {instanceID: 11406}
+      Script: {instanceID: 11408}
     - Class: 114
-      Script: {instanceID: 11428}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11536}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 11622}
+      Script: {instanceID: 11624}
     - Class: 114
-      Script: {instanceID: 11836}
+      Script: {instanceID: 11838}
     - Class: 114
-      Script: {instanceID: 11866}
+      Script: {instanceID: 11868}
     - Class: 114
-      Script: {instanceID: 11908}
+      Script: {instanceID: 11910}
     - Class: 114
-      Script: {instanceID: 12140}
+      Script: {instanceID: 12142}
     - Class: 114
-      Script: {instanceID: 12254}
+      Script: {instanceID: 12256}
     - Class: 114
-      Script: {instanceID: 12306}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12488}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12502}
+      Script: {instanceID: 12504}
     - Class: 114
-      Script: {instanceID: 12702}
+      Script: {instanceID: 12704}
     - Class: 114
-      Script: {instanceID: 12768}
+      Script: {instanceID: 12770}
     - Class: 114
-      Script: {instanceID: 12930}
+      Script: {instanceID: 12932}
     - Class: 114
-      Script: {instanceID: 13078}
+      Script: {instanceID: 13080}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 13152}
+    - Class: 114
+      Script: {instanceID: 14968}
+    - Class: 114
+      Script: {instanceID: 20238}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -421,7 +433,7 @@ ScriptsOnlyBuild:
     className: OnClickRpc
   - hash:
       serializedVersion: 2
-      Hash: d1f07c9e64b7817e6271f80bb03de25f
+      Hash: 1efbeee11da833e636b28aacf09dbe7a
     assemblyName: Assembly-CSharp.dll
     namespaceName: ToLC.Network
     className: PlayerSpawner
@@ -839,6 +851,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC
+    className: DontDestroyOnLoad
+  - hash:
+      serializedVersion: 2
+      Hash: 420b8543ca2366167f9a4a044a6cc735
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Enemy
+    className: AI
   platform: 5
   scenePathNames:
   - Assets/ScriptTesting/ScriptTestingMenu.unity

@@ -44,7 +44,7 @@ namespace ToLC.Menues
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log("Connected To Mater");
+            Debug.Log("Connected To Master");
 
             if (isConnecting)
             {
@@ -82,6 +82,7 @@ namespace ToLC.Menues
             {
                 waitingStatusText.text = "Opponent Found";
                 Debug.Log("Matching is ready to begin");
+                gameObject.SetActive(false);
             }
         }
 
@@ -95,6 +96,8 @@ namespace ToLC.Menues
                 Debug.Log("Matching is ready to begin");
 
                 PhotonNetwork.LoadLevel("ScriptTestingLevel");
+                
+                gameObject.SetActive(false);
             }
         }
     }
