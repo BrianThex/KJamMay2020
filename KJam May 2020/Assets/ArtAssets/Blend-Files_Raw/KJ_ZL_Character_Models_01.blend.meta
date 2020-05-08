@@ -12,6 +12,9 @@ ModelImporter:
   - first:
       74: 3950376284128371497
     second: enemyRunning01
+  - first:
+      74: -623603649343465320
+    second: Scene
   externalObjects: {}
   materials:
     materialImportMode: 1
