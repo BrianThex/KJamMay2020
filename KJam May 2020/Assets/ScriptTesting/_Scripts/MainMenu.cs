@@ -85,7 +85,7 @@ namespace ToLC.Menues
             }
         }
 
-        public override void OnPlayerEnteredRoom(Player newPlayer)
+        public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
         {
             if(PhotonNetwork.CurrentRoom.PlayerCount == MaxPlayersPerRoom)
             {

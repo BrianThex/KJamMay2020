@@ -3,7 +3,11 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - ToLC.Menues.MainMenu
     - ToLC.Network.NetworkManager
+    - ToLC.Network.PlayerSpawner
+    - ToLC.Player.Movement
     PhotonUnityNetworking.dll:
+    - Photon.Pun.PhotonTransformView
+    - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -55,6 +59,16 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11536}
+    - Class: 114
+      Script: {instanceID: 12138}
+    - Class: 114
+      Script: {instanceID: 13076}
+    - Class: 114
+      Script: {instanceID: 14300}
+    - Class: 115
+      Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
@@ -70,7 +84,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
@@ -85,42 +105,50 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11184}
+      Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 11362}
+      Script: {instanceID: 11186}
     - Class: 114
-      Script: {instanceID: 11404}
+      Script: {instanceID: 11364}
     - Class: 114
-      Script: {instanceID: 11426}
+      Script: {instanceID: 11406}
     - Class: 114
-      Script: {instanceID: 11618}
+      Script: {instanceID: 11428}
     - Class: 114
-      Script: {instanceID: 11830}
+      Script: {instanceID: 11536}
     - Class: 114
-      Script: {instanceID: 11860}
+      Script: {instanceID: 11622}
     - Class: 114
-      Script: {instanceID: 12246}
+      Script: {instanceID: 11834}
     - Class: 114
-      Script: {instanceID: 12298}
+      Script: {instanceID: 11864}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 11906}
     - Class: 114
-      Script: {instanceID: 12494}
+      Script: {instanceID: 12138}
     - Class: 114
-      Script: {instanceID: 12694}
+      Script: {instanceID: 12252}
     - Class: 114
-      Script: {instanceID: 12760}
+      Script: {instanceID: 12304}
     - Class: 114
-      Script: {instanceID: 12922}
+      Script: {instanceID: 12486}
     - Class: 114
-      Script: {instanceID: 13142}
+      Script: {instanceID: 12500}
     - Class: 114
-      Script: {instanceID: 13916}
+      Script: {instanceID: 12700}
     - Class: 114
-      Script: {instanceID: 15368}
+      Script: {instanceID: 12766}
+    - Class: 114
+      Script: {instanceID: 12928}
+    - Class: 114
+      Script: {instanceID: 13076}
+    - Class: 114
+      Script: {instanceID: 13148}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -135,6 +163,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 43f991ede2224643b215fa3f5e866db7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Menues
+    className: MainMenu
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -299,6 +333,12 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 459b50185a167c1d210a783633c72823
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Player
+    className: Movement
+  - hash:
+      serializedVersion: 2
       Hash: 11df54cb47bd74c537f3c732a94ea97d
     assemblyName: PhotonUnityNetworking.dll
     namespaceName: Photon.Pun
@@ -417,6 +457,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: f76f64525df6f43514a5940592253b45
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Network
+    className: NetworkManager
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -785,16 +831,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: f76f64525df6f43514a5940592253b45
+      Hash: d1f07c9e64b7817e6271f80bb03de25f
     assemblyName: Assembly-CSharp.dll
     namespaceName: ToLC.Network
-    className: NetworkManager
-  - hash:
-      serializedVersion: 2
-      Hash: 43f991ede2224643b215fa3f5e866db7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ToLC.Menues
-    className: MainMenu
+    className: PlayerSpawner
   platform: 5
   scenePathNames:
   - Assets/ScriptTesting/ScriptTestingMenu.unity
