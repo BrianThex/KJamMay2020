@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &1088158279325834593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356361548651177596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6604624, y: 3.6087804, z: 1.2681024}
+  m_Center: {x: 0.71439326, y: 1.244894, z: 0.5735184}
 --- !u!1 &5460867422600573599
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +23,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5460867422600573598}
   m_Layer: 0
-  m_Name: Wall_Crystal
+  m_Name: KJ_ZL_Wall_Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,6 +114,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8bfc241aaaa6c84088771deca1a57a7, type: 3}
+--- !u!1 &1356361548651177596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6420486382174043075, guid: a8bfc241aaaa6c84088771deca1a57a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5460867420978503103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2632805316853290095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8016828999447710160, guid: a8bfc241aaaa6c84088771deca1a57a7,
