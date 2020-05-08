@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/ScriptTesting/ScriptTestingMenu.unity
     guid: 6a036782e3ab04d48bda5a579335062e
   - enabled: 1
-    path: Assets/ScriptTesting/ScriptTestingLevel.unity
-    guid: 1bd0f3196623dd441899883493a623cb
+    path: Assets/Scenes/SimpleLevel.unity
+    guid: bb0584926730bd448ae08fb35c749115
   m_configObjects: {}
