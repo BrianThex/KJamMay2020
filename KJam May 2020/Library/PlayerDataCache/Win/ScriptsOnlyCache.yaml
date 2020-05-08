@@ -3,10 +3,14 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - ToLC.DontDestroyOnLoad
     - ToLC.Enemy.AI
+    - ToLC.Interactable
     - ToLC.Menues.MainMenu
     - ToLC.Network.NetworkManager
     - ToLC.Network.PlayerSpawner
     - ToLC.Player.Movement
+    - ToLC.Player.PlayerInput
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonTransformView
     - Photon.Pun.PhotonView
@@ -53,6 +57,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -69,6 +75,65 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12168}
     - Class: 114
       Script: {instanceID: 13106}
+    - Class: 114
+      Script: {instanceID: 23462}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 238
+      Script: {instanceID: 0}
+    Assets/ScriptTesting/ScriptTestingLevel.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11562}
+    - Class: 114
+      Script: {instanceID: 11816}
+    - Class: 114
+      Script: {instanceID: 12154}
+    - Class: 114
+      Script: {instanceID: 12168}
+    - Class: 114
+      Script: {instanceID: 13106}
+    - Class: 114
+      Script: {instanceID: 23246}
+    - Class: 114
+      Script: {instanceID: 23462}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
@@ -158,6 +223,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13106}
     - Class: 114
       Script: {instanceID: 13178}
+    - Class: 114
+      Script: {instanceID: 23246}
+    - Class: 114
+      Script: {instanceID: 23462}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -165,8 +234,6 @@ ScriptsOnlyBuild:
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
-      Script: {instanceID: 0}
-    - Class: 195
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
@@ -863,9 +930,22 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: bf4698a3b70ae92d7166ab31c3de7991
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC
+    className: Interactable
+  - hash:
+      serializedVersion: 2
+      Hash: 7481ef15897b30d031098bf1448ba4ed
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Player
+    className: PlayerInput
   platform: 5
   scenePathNames:
   - Assets/ScriptTesting/ScriptTestingMenu.unity
   - Assets/Scenes/SimpleLevel.unity
+  - Assets/ScriptTesting/ScriptTestingLevel.unity
   playerPath: C:/Users/brian/Documents/KJamMay2020/KJam May 2020/Builds/KJam May
     2020.exe

@@ -95,7 +95,7 @@ namespace ToLC.Menues
                 waitingStatusText.text = "Opponent Found";
                 Debug.Log("Matching is ready to begin");
 
-                PhotonNetwork.LoadLevel("SimpleLevel");
+                PhotonNetwork.LoadLevel("ScriptTestingLevel");
                 
                 gameObject.SetActive(false);
             }

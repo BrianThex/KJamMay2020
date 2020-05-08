@@ -27,15 +27,7 @@ namespace ToLC.Player
             controller = GetComponent<CharacterController>();
         }
 
-        private void Update()
-        {
-            if (photonView.IsMine)
-            {
-                TakeInput();
-            }
-        }
-
-        private void TakeInput()
+        public void HandleMovement()
         {
             Vector3 movement = new Vector3
             {
