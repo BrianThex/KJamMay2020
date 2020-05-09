@@ -57,6 +57,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: KJ_ZL_Wall_Straight_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6420486382174043075, guid: a8bfc241aaaa6c84088771deca1a57a7,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420486382174043075, guid: a8bfc241aaaa6c84088771deca1a57a7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8016828999447710160, guid: a8bfc241aaaa6c84088771deca1a57a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -137,6 +147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KJ_ZL_Floor_Tile_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778348334867536864, guid: 209e283967e4ea849a4addd1806123d0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8361851515657071091, guid: 209e283967e4ea849a4addd1806123d0,
         type: 3}
