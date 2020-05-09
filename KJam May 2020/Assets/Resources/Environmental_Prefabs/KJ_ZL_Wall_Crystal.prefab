@@ -52,6 +52,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5460867422600573598}
     m_Modifications:
+    - target: {fileID: 4694703906677411615, guid: a8bfc241aaaa6c84088771deca1a57a7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5ce5d332832eb6479a996e5c281986a, type: 2}
     - target: {fileID: 6420486382174043075, guid: a8bfc241aaaa6c84088771deca1a57a7,
         type: 3}
       propertyPath: m_Name
