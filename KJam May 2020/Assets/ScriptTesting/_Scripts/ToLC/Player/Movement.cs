@@ -20,22 +20,23 @@ namespace ToLC.Player
         private void Awake()
         {
             instance = this;
+            controller = GetComponent<CharacterController>();
         }
 
         private void Start()
         {
-            controller = GetComponent<CharacterController>();
+
         }
 
         private void Update()
         {
             if (photonView.IsMine)
             {
-                TakeInput();
+                HandleMovement();
             }
         }
 
-        private void TakeInput()
+        public void HandleMovement()
         {
             Vector3 movement = new Vector3
             {

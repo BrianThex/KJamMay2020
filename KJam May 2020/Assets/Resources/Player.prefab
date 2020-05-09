@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5397820112366267100}
   - component: {fileID: 5397820112366267091}
   - component: {fileID: 5397820112366267090}
+  - component: {fileID: 3319281560783911601}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -105,6 +106,21 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &3319281560783911601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397820112366267089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28f233511ca254087cdf440532ef55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isChest: 1
+  focus: {fileID: 0}
+  inputState: 0
 --- !u!1 &5397820112901026145
 GameObject:
   m_ObjectHideFlags: 0

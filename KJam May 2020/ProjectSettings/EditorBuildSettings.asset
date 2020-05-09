@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SimpleLevel.unity
     guid: bb0584926730bd448ae08fb35c749115
+  - enabled: 1
+    path: Assets/ScriptTesting/ScriptTestingLevel.unity
+    guid: 1bd0f3196623dd441899883493a623cb
   m_configObjects: {}
