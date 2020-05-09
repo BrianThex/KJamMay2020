@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using ToLC.Items;
+using ToLC.Interactables.Items;
 using UnityEngine;
 
 namespace ToLC.Player.Inventory

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ToLC.Interactables;
 using UnityEngine;
 using Photon.Pun;
 using System;
