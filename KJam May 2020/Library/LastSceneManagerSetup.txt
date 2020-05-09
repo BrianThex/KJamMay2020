@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/enviTests.unity
+- path: Assets/Scenes/Cathedral_Ward.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
