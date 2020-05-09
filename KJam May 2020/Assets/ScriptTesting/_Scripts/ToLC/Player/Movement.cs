@@ -13,8 +13,6 @@ namespace ToLC.Player
 
         [SerializeField] private float moveSpeed = 0f;
 
-        [SerializeField] Transform playerGraphics = null;
-
         private CharacterController controller = null;
 
         private void Awake()

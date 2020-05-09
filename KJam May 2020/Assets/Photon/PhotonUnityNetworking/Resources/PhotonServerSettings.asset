@@ -33,6 +33,8 @@ MonoBehaviour:
   RpcList:
   - ClickRpc
   - DestroyRpc
+  - PickUp
+  - RPCPickUp
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 0
