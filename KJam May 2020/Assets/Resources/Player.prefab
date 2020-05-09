@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  playerGraphics: {fileID: 5397820112901026146}
 --- !u!114 &5397820112366267091
 MonoBehaviour:
   m_ObjectHideFlags: 0

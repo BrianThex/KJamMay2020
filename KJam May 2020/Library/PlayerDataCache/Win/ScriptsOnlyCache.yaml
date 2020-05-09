@@ -1,14 +1,20 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - DeleteMe
     - ToLC.DontDestroyOnLoad
     - ToLC.Enemy.AI
     - ToLC.Interactable
+    - ToLC.Items.Item
     - ToLC.Menues.MainMenu
     - ToLC.Network.NetworkManager
     - ToLC.Network.PlayerSpawner
+    - ToLC.Player.Inventory.Inventory
+    - ToLC.Player.ItemPickup
     - ToLC.Player.Movement
     - ToLC.Player.PlayerInput
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonTransformView
     - Photon.Pun.PhotonView
@@ -22,6 +28,14 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -66,15 +80,15 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 11622}
+      Script: {instanceID: 11590}
     - Class: 114
-      Script: {instanceID: 11828}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 12180}
+      Script: {instanceID: 12148}
     - Class: 114
-      Script: {instanceID: 13118}
+      Script: {instanceID: 13088}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
@@ -119,19 +133,25 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 11622}
+      Script: {instanceID: 11590}
     - Class: 114
-      Script: {instanceID: 11720}
+      Script: {instanceID: 11688}
     - Class: 114
-      Script: {instanceID: 11828}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12134}
     - Class: 114
-      Script: {instanceID: 12180}
+      Script: {instanceID: 12148}
     - Class: 114
-      Script: {instanceID: 13118}
+      Script: {instanceID: 13088}
+    - Class: 114
+      Script: {instanceID: 29960}
+    - Class: 114
+      Script: {instanceID: 48402}
+    - Class: 114
+      Script: {instanceID: 135086}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
@@ -165,6 +185,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -176,55 +198,61 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11210}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11220}
+      Script: {instanceID: 11188}
     - Class: 114
-      Script: {instanceID: 11398}
+      Script: {instanceID: 11366}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11408}
     - Class: 114
-      Script: {instanceID: 11462}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 11622}
+      Script: {instanceID: 11590}
     - Class: 114
-      Script: {instanceID: 11658}
+      Script: {instanceID: 11626}
     - Class: 114
-      Script: {instanceID: 11720}
+      Script: {instanceID: 11688}
     - Class: 114
-      Script: {instanceID: 11828}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 11874}
+      Script: {instanceID: 11842}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 11872}
     - Class: 114
-      Script: {instanceID: 11946}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12134}
     - Class: 114
-      Script: {instanceID: 12180}
+      Script: {instanceID: 12148}
     - Class: 114
-      Script: {instanceID: 12294}
+      Script: {instanceID: 12262}
     - Class: 114
-      Script: {instanceID: 12346}
+      Script: {instanceID: 12314}
     - Class: 114
-      Script: {instanceID: 12528}
+      Script: {instanceID: 12496}
     - Class: 114
-      Script: {instanceID: 12542}
+      Script: {instanceID: 12510}
     - Class: 114
-      Script: {instanceID: 12546}
+      Script: {instanceID: 12514}
     - Class: 114
-      Script: {instanceID: 12742}
+      Script: {instanceID: 12712}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12778}
     - Class: 114
-      Script: {instanceID: 12970}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 13118}
+      Script: {instanceID: 13088}
     - Class: 114
-      Script: {instanceID: 13190}
+      Script: {instanceID: 13160}
+    - Class: 114
+      Script: {instanceID: 29960}
+    - Class: 114
+      Script: {instanceID: 135086}
+    - Class: 114
+      Script: {instanceID: 135098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -414,7 +442,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: cd2fd4f509067222cd178d16dc1174ed
+      Hash: 459b50185a167c1d210a783633c72823
     assemblyName: Assembly-CSharp.dll
     namespaceName: ToLC.Player
     className: Movement
@@ -940,6 +968,30 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 9e8521335c8abd30df3c10fe4ba62625
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Player
+    className: ItemPickup
+  - hash:
+      serializedVersion: 2
+      Hash: 184e0d951de47f5e9515a7e07db8527b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DeleteMe
+  - hash:
+      serializedVersion: 2
+      Hash: 86adcb85b0be81785665e999457c71c7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Items
+    className: Item
+  - hash:
+      serializedVersion: 2
+      Hash: 1338a14211be79ff81ec931c540bc184
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Player.Inventory
+    className: Inventory
   platform: 5
   scenePathNames:
   - Assets/ScriptTesting/ScriptTestingMenu.unity

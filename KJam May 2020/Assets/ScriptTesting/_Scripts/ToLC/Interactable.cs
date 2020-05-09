@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 
 namespace ToLC
 {
-    public class Interactable : MonoBehaviour
+    public class Interactable : MonoBehaviourPun
     {
         public float radius = 3f;
 
