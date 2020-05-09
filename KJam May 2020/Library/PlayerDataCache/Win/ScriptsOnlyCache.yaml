@@ -9,8 +9,6 @@ ScriptsOnlyBuild:
     - ToLC.Network.PlayerSpawner
     - ToLC.Player.Movement
     - ToLC.Player.PlayerInput
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonTransformView
     - Photon.Pun.PhotonView
@@ -68,15 +66,15 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11562}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 11816}
+      Script: {instanceID: 11622}
     - Class: 114
-      Script: {instanceID: 12168}
+      Script: {instanceID: 11828}
     - Class: 114
-      Script: {instanceID: 13106}
+      Script: {instanceID: 12180}
     - Class: 114
-      Script: {instanceID: 23462}
+      Script: {instanceID: 13118}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
@@ -121,19 +119,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11562}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 11816}
+      Script: {instanceID: 11622}
     - Class: 114
-      Script: {instanceID: 12154}
+      Script: {instanceID: 11720}
     - Class: 114
-      Script: {instanceID: 12168}
+      Script: {instanceID: 11828}
     - Class: 114
-      Script: {instanceID: 13106}
+      Script: {instanceID: 12166}
     - Class: 114
-      Script: {instanceID: 23246}
+      Script: {instanceID: 12180}
     - Class: 114
-      Script: {instanceID: 23462}
+      Script: {instanceID: 13118}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
@@ -178,55 +176,55 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11202}
+      Script: {instanceID: 11210}
     - Class: 114
-      Script: {instanceID: 11212}
+      Script: {instanceID: 11220}
     - Class: 114
-      Script: {instanceID: 11390}
+      Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 11432}
+      Script: {instanceID: 11440}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 11562}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 11648}
+      Script: {instanceID: 11622}
     - Class: 114
-      Script: {instanceID: 11816}
+      Script: {instanceID: 11658}
     - Class: 114
-      Script: {instanceID: 11862}
+      Script: {instanceID: 11720}
     - Class: 114
-      Script: {instanceID: 11892}
+      Script: {instanceID: 11828}
     - Class: 114
-      Script: {instanceID: 11934}
+      Script: {instanceID: 11874}
     - Class: 114
-      Script: {instanceID: 12154}
+      Script: {instanceID: 11904}
     - Class: 114
-      Script: {instanceID: 12168}
+      Script: {instanceID: 11946}
     - Class: 114
-      Script: {instanceID: 12282}
+      Script: {instanceID: 12166}
     - Class: 114
-      Script: {instanceID: 12334}
+      Script: {instanceID: 12180}
     - Class: 114
-      Script: {instanceID: 12516}
+      Script: {instanceID: 12294}
     - Class: 114
-      Script: {instanceID: 12530}
+      Script: {instanceID: 12346}
     - Class: 114
-      Script: {instanceID: 12534}
+      Script: {instanceID: 12528}
     - Class: 114
-      Script: {instanceID: 12730}
+      Script: {instanceID: 12542}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 12958}
+      Script: {instanceID: 12742}
     - Class: 114
-      Script: {instanceID: 13106}
+      Script: {instanceID: 12808}
     - Class: 114
-      Script: {instanceID: 13178}
+      Script: {instanceID: 12970}
     - Class: 114
-      Script: {instanceID: 23246}
+      Script: {instanceID: 13118}
     - Class: 114
-      Script: {instanceID: 23462}
+      Script: {instanceID: 13190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -434,6 +432,12 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
+      Hash: 40ee9b70e4313e6c5bc89205b66cb4f3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Player
+    className: PlayerInput
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -456,6 +460,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: bf4698a3b70ae92d7166ab31c3de7991
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC
+    className: Interactable
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -930,18 +940,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: bf4698a3b70ae92d7166ab31c3de7991
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ToLC
-    className: Interactable
-  - hash:
-      serializedVersion: 2
-      Hash: 7481ef15897b30d031098bf1448ba4ed
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ToLC.Player
-    className: PlayerInput
   platform: 5
   scenePathNames:
   - Assets/ScriptTesting/ScriptTestingMenu.unity

@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28f233511ca254087cdf440532ef55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChest: 1
   focus: {fileID: 0}
   inputState: 0
 --- !u!1 &5397820112901026145

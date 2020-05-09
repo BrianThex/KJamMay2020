@@ -20,11 +20,20 @@ namespace ToLC.Player
         private void Awake()
         {
             instance = this;
+            controller = GetComponent<CharacterController>();
         }
 
         private void Start()
         {
-            controller = GetComponent<CharacterController>();
+
+        }
+
+        private void Update()
+        {
+            if (photonView.IsMine)
+            {
+                HandleMovement();
+            }
         }
 
         public void HandleMovement()

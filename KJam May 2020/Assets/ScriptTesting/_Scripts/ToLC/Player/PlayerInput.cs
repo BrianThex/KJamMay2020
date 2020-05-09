@@ -10,6 +10,8 @@ namespace ToLC.Player
 	{
 		public static PlayerInput instance;
 
+		public bool isChest = true;
+
 		public Interactable focus = null;
 
 		private Camera cam = null;
@@ -40,7 +42,7 @@ namespace ToLC.Player
 				switch (inputState)
 				{
 					case InputState.GamePlay:
-						Movement.instance.HandleMovement();
+						//Movement.instance.HandleMovement();
 						GamePlayMouseInput();
 						break;
 					case InputState.Paused:
@@ -71,13 +73,21 @@ namespace ToLC.Player
 		}
 
 		private void RemoveFocus()
-		{
+		{	
+			if (focus != null)
+				focus.OnDefocused();
 			focus = null;
 		}
 
 		private void SetFocus(Interactable newFocus)
 		{
-			focus = newFocus;
+			if (newFocus != focus)
+			{
+				if (focus != null)
+					focus.OnDefocused();
+				focus = newFocus;
+			}
+			newFocus.OnFocused(gameObject.transform);
 		}
 	}
 }
