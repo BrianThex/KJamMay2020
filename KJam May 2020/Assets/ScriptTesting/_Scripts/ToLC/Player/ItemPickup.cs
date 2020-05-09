@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
 using System.Collections;
-using ToLC.Items;
+using ToLC.Interactables.Items;
+using ToLC.Interactables;
 using UnityEngine;
 
 using ToLC.Player.Inventory;
