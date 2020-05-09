@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Gold
   icon: {fileID: 0}
   isDefaultItem: 0
+  isStackable: 0

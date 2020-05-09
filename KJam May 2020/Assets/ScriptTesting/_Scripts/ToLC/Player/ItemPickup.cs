@@ -30,8 +30,10 @@ namespace ToLC.Player
             if (photonView.IsMine)
             {
                 Debug.Log("Player Picked up " + item.name);
-                Inventory.Inventory.instance.Add(item);
-                PhotonNetwork.Destroy(gameObject);
+                bool wasPickedUp = Inventory.Inventory.instance.Add(item);
+
+                if(wasPickedUp)
+                    PhotonNetwork.Destroy(gameObject);
             }
             else
                 StartCoroutine(DestroyMe());

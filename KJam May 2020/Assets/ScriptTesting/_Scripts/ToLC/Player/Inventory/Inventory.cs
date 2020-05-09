@@ -18,18 +18,36 @@ namespace ToLC.Player.Inventory
             }
             instance = this;
         }
-		#endregion
+        #endregion
+
+        public delegate void OnItemChanged();
+        public OnItemChanged onItemChangedCallback;
+
+        public int maxSpace = 20;
 
 		public List<Item> items = new List<Item>();
 
-        public void Add (Item item)
+        public bool Add (Item item)
         {
             if (!item.isDefaultItem)
+            {
+                if (items.Count >= maxSpace)
+                {
+                    Debug.Log("Not enough inventory space!");
+                    return false;
+                }
                 items.Add(item);
+
+                if (onItemChangedCallback != null)
+                    onItemChangedCallback.Invoke();
+            }
+            return true;
         }
         public void Remove (Item item)
         {
             items.Remove(item);
+            if (onItemChangedCallback != null)
+                onItemChangedCallback.Invoke();
         }
     }
 }

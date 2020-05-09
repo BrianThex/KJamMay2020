@@ -13,8 +13,6 @@ ScriptsOnlyBuild:
     - ToLC.Player.ItemPickup
     - ToLC.Player.Movement
     - ToLC.Player.PlayerInput
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonTransformView
     - Photon.Pun.PhotonView
@@ -31,10 +29,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -73,23 +69,33 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11538}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 11590}
+      Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 11796}
+      Script: {instanceID: 11818}
     - Class: 114
-      Script: {instanceID: 12148}
+      Script: {instanceID: 12170}
     - Class: 114
-      Script: {instanceID: 13088}
+      Script: {instanceID: 13118}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
@@ -133,25 +139,25 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11538}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 11590}
+      Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 11688}
+      Script: {instanceID: 11710}
     - Class: 114
-      Script: {instanceID: 11796}
+      Script: {instanceID: 11818}
     - Class: 114
-      Script: {instanceID: 12134}
+      Script: {instanceID: 12156}
     - Class: 114
-      Script: {instanceID: 12148}
+      Script: {instanceID: 12170}
     - Class: 114
-      Script: {instanceID: 13088}
+      Script: {instanceID: 12208}
     - Class: 114
-      Script: {instanceID: 29960}
+      Script: {instanceID: 12600}
     - Class: 114
-      Script: {instanceID: 48402}
+      Script: {instanceID: 12856}
     - Class: 114
-      Script: {instanceID: 135086}
+      Script: {instanceID: 13118}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
@@ -198,61 +204,61 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11178}
+      Script: {instanceID: 11200}
     - Class: 114
-      Script: {instanceID: 11188}
+      Script: {instanceID: 11210}
     - Class: 114
-      Script: {instanceID: 11366}
-    - Class: 114
-      Script: {instanceID: 11408}
+      Script: {instanceID: 11388}
     - Class: 114
       Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11538}
+      Script: {instanceID: 11452}
     - Class: 114
-      Script: {instanceID: 11590}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 11626}
+      Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 11688}
+      Script: {instanceID: 11648}
     - Class: 114
-      Script: {instanceID: 11796}
+      Script: {instanceID: 11710}
     - Class: 114
-      Script: {instanceID: 11842}
+      Script: {instanceID: 11818}
     - Class: 114
-      Script: {instanceID: 11872}
+      Script: {instanceID: 11864}
     - Class: 114
-      Script: {instanceID: 11914}
+      Script: {instanceID: 11894}
     - Class: 114
-      Script: {instanceID: 12134}
+      Script: {instanceID: 11936}
     - Class: 114
-      Script: {instanceID: 12148}
+      Script: {instanceID: 12156}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12170}
     - Class: 114
-      Script: {instanceID: 12314}
+      Script: {instanceID: 12208}
     - Class: 114
-      Script: {instanceID: 12496}
+      Script: {instanceID: 12286}
     - Class: 114
-      Script: {instanceID: 12510}
+      Script: {instanceID: 12338}
     - Class: 114
-      Script: {instanceID: 12514}
+      Script: {instanceID: 12520}
     - Class: 114
-      Script: {instanceID: 12712}
+      Script: {instanceID: 12534}
     - Class: 114
-      Script: {instanceID: 12778}
+      Script: {instanceID: 12538}
     - Class: 114
-      Script: {instanceID: 12940}
+      Script: {instanceID: 12600}
     - Class: 114
-      Script: {instanceID: 13088}
+      Script: {instanceID: 12640}
     - Class: 114
-      Script: {instanceID: 13160}
+      Script: {instanceID: 12740}
     - Class: 114
-      Script: {instanceID: 29960}
+      Script: {instanceID: 12806}
     - Class: 114
-      Script: {instanceID: 135086}
+      Script: {instanceID: 12970}
     - Class: 114
-      Script: {instanceID: 135098}
+      Script: {instanceID: 13118}
+    - Class: 114
+      Script: {instanceID: 13190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -658,6 +664,12 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: 86adcb85b0be81785665e999457c71c7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Items
+    className: Item
+  - hash:
+      serializedVersion: 2
       Hash: 4fdfe530ffd5f502ce72adb104fc64e2
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -754,6 +766,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 9e8521335c8abd30df3c10fe4ba62625
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Player
+    className: ItemPickup
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -764,6 +782,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
     className: PunTurnManager
+  - hash:
+      serializedVersion: 2
+      Hash: 23e636af0ee061c93207f95d848849a0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ToLC.Player.Inventory
+    className: Inventory
   - hash:
       serializedVersion: 2
       Hash: 458215150b18ad62be70c422736998f8
@@ -806,6 +830,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 184e0d951de47f5e9515a7e07db8527b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DeleteMe
   - hash:
       serializedVersion: 2
       Hash: c5fd97cc10b89deaf7c60af66a6b0d5a
@@ -968,30 +998,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 9e8521335c8abd30df3c10fe4ba62625
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ToLC.Player
-    className: ItemPickup
-  - hash:
-      serializedVersion: 2
-      Hash: 184e0d951de47f5e9515a7e07db8527b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DeleteMe
-  - hash:
-      serializedVersion: 2
-      Hash: 86adcb85b0be81785665e999457c71c7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ToLC.Items
-    className: Item
-  - hash:
-      serializedVersion: 2
-      Hash: 1338a14211be79ff81ec931c540bc184
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ToLC.Player.Inventory
-    className: Inventory
   platform: 5
   scenePathNames:
   - Assets/ScriptTesting/ScriptTestingMenu.unity
