@@ -16,6 +16,7 @@ namespace ToLC.Interactables
         public virtual void Interact()
         {
             // This will be for our over writes
+
         }
 
         private void Update()

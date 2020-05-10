@@ -4,8 +4,6 @@ using ToLC.Interactables.Items;
 using ToLC.Interactables;
 using UnityEngine;
 
-using ToLC.Player.Inventory;
-
 namespace ToLC.Player
 {
     public class ItemPickup : Interactable
@@ -29,25 +27,40 @@ namespace ToLC.Player
         {
             yield return StartCoroutine(GetOwnerShip());
 
-            if (photonView.IsMine)
+            //if (photonView.IsMine)
+            //{
+            //    if (item != null)
+            //    {
+            //        Debug.Log("Player Picked up " + item.name);
+            //        bool hasPickedUp = Inventory.Inventory.instance.Add(item);
+            //        if (hasPickedUp)
+            //            PhotonNetwork.Destroy(gameObject);
+            //    }
+            //    if (card != null)
+            //    {
+            //        Debug.Log("Player Picked up " + card.name);
+            //        bool hasPickedUp = Inventory.Inventory.instance.Add(card);
+            //        if (hasPickedUp)
+            //            PhotonNetwork.Destroy(gameObject);
+            //    }
+            //}
+            //else
+            //    StartCoroutine(DestroyMe());
+
+            if (item != null)
             {
-                if (item != null)
-                {
-                    Debug.Log("Player Picked up " + item.name);
-                    bool hasPickedUp = Inventory.Inventory.instance.Add(item);
-                    if (hasPickedUp)
-                        PhotonNetwork.Destroy(gameObject);
-                }
-                if (card != null)
-                {
-                    Debug.Log("Player Picked up " + card.name);
-                    bool hasPickedUp = Inventory.Inventory.instance.Add(card);
-                    if (hasPickedUp)
-                        PhotonNetwork.Destroy(gameObject);
-                }
+                Debug.Log("Player Picked up " + item.name);
+                bool hasPickedUp = Inventory.Inventory.instance.Add(item);
+                if (hasPickedUp)
+                    Destroy(gameObject);
             }
-            else
-                StartCoroutine(DestroyMe());
+            if (card != null)
+            {
+                Debug.Log("Player Picked up " + card.name);
+                bool hasPickedUp = Inventory.Inventory.instance.Add(card);
+                if (hasPickedUp)
+                    Destroy(gameObject);
+            }
         }
 
         //[PunRPC]
