@@ -107,7 +107,7 @@ namespace ToLC.Menues
         public void LoadRandomLevel()
         {
             photonView.RPC("CloseGlobalMenu", RpcTarget.All, "Lobby");
-            PhotonNetwork.LoadLevel("SimpleLevel");
+            PhotonNetwork.LoadLevel("ScriptTestingLevel");
         }
 
         private void setLobby()
