@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2caeacd2dd271ad4cb42a55095e2de25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 4597669684218133536}
+  anim: {fileID: 4752786645345386655}
   moveSpeed: 5
 --- !u!114 &3319281560783911601
 MonoBehaviour:
@@ -212,8 +212,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28f233511ca254087cdf440532ef55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 4752786645345386655}
   isChest: 1
   focus: {fileID: 0}
+  currentHealth: 0
+  health: 100
+  range: 2
+  damage: 5
+  attackCooldown: 0
+  baseCooldown: 0.5
   inputState: 0
 --- !u!1 &5397820112901026145
 GameObject:
@@ -294,6 +301,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &4752786645345386655
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7430779056781861705}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 9ee77d4002e10cb4a8002bf69781c9f5, type: 3}
+  m_Controller: {fileID: 9100000, guid: 117ecab53dacdb746958178647c85d62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &6746544635164291199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +360,12 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: isRunning
+  - Type: 4
+    SynchronizeType: 1
+    Name: dwnAttack
+  - Type: 9
+    SynchronizeType: 1
+    Name: horAttack
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
@@ -518,12 +550,6 @@ GameObject:
 --- !u!4 &5855866946472628570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 9ee77d4002e10cb4a8002bf69781c9f5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1458747609310722624}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &4597669684218133536 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 9ee77d4002e10cb4a8002bf69781c9f5,
     type: 3}
   m_PrefabInstance: {fileID: 1458747609310722624}
   m_PrefabAsset: {fileID: 0}

@@ -30,7 +30,7 @@ namespace ToLC.Player
 
         private void Update()
         {
-            if (photonView.IsMine)
+            if (photonView.IsMine && PlayerInput.instance.inputState == PlayerInput.InputState.GamePlay)
             {
                 HandleMovement();
             }
