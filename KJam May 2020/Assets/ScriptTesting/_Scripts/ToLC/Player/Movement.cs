@@ -11,6 +11,8 @@ namespace ToLC.Player
     {
         public static Movement instance;
 
+        [SerializeField] private Animator anim;
+
         [SerializeField] private float moveSpeed = 0f;
 
         private CharacterController controller = null;
@@ -28,7 +30,7 @@ namespace ToLC.Player
 
         private void Update()
         {
-            if (photonView.IsMine)
+            if (photonView.IsMine && PlayerInput.instance.inputState == PlayerInput.InputState.GamePlay)
             {
                 HandleMovement();
             }
@@ -51,7 +53,12 @@ namespace ToLC.Player
 
             if (movement != Vector3.zero)
             {
+                anim.SetTrigger("isRunning");
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement), 10 * Time.deltaTime);
+            }
+            else
+            {
+                anim.ResetTrigger("isRunning");
             }
         }
     }
