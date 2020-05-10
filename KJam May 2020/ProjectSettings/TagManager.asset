@@ -17,8 +17,8 @@ TagManager:
   - 
   - Enemy
   - 
-  - 
-  - 
+  - PostProcessBloom
+  - PostProcessAO+Colors
   - 
   - 
   - 
