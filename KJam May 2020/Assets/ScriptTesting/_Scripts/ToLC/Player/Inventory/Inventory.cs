@@ -26,6 +26,7 @@ namespace ToLC.Player.Inventory
         public int maxSpace = 20;
 
 		public List<Item> items = new List<Item>();
+        public List<Card> cards = new List<Card>();
 
         public bool Add (Item item)
         {
@@ -46,6 +47,29 @@ namespace ToLC.Player.Inventory
         public void Remove (Item item)
         {
             items.Remove(item);
+            if (onItemChangedCallback != null)
+                onItemChangedCallback.Invoke();
+        }
+
+        public bool Add(Card card)
+        {
+            if (!card.isDefaultItem)
+            {
+                if (cards.Count >= maxSpace)
+                {
+                    Debug.Log("Not enough inventory space!");
+                    return false;
+                }
+                cards.Add(card);
+
+                if (onItemChangedCallback != null)
+                    onItemChangedCallback.Invoke();
+            }
+            return true;
+        }
+        public void Remove(Card card)
+        {
+            cards.Remove(card);
             if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
         }

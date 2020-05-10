@@ -131,3 +131,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   item: {fileID: 11400000, guid: bfdbfabd6c37d2a4c80b31ce8a808c11, type: 2}
+  card: {fileID: 0}

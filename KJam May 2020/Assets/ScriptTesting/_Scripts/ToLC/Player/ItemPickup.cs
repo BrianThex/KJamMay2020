@@ -11,6 +11,7 @@ namespace ToLC.Player
     public class ItemPickup : Interactable
     {
         public Item item = null;
+        public Card card = null;
         public override void Interact()
         {
             base.Interact();
@@ -20,7 +21,7 @@ namespace ToLC.Player
 
         private IEnumerator GetOwnerShip()
         {
-            photonView.RequestOwnership();
+            //photonView.RequestOwnership();
             yield return new WaitForEndOfFrame();
         }
 
@@ -30,15 +31,36 @@ namespace ToLC.Player
 
             if (photonView.IsMine)
             {
-                Debug.Log("Player Picked up " + item.name);
-                bool wasPickedUp = Inventory.Inventory.instance.Add(item);
-
-                if(wasPickedUp)
-                    PhotonNetwork.Destroy(gameObject);
+                if (item != null)
+                {
+                    Debug.Log("Player Picked up " + item.name);
+                    bool hasPickedUp = Inventory.Inventory.instance.Add(item);
+                    if (hasPickedUp)
+                        PhotonNetwork.Destroy(gameObject);
+                }
+                if (card != null)
+                {
+                    Debug.Log("Player Picked up " + card.name);
+                    bool hasPickedUp = Inventory.Inventory.instance.Add(card);
+                    if (hasPickedUp)
+                        PhotonNetwork.Destroy(gameObject);
+                }
             }
             else
                 StartCoroutine(DestroyMe());
         }
+
+        //[PunRPC]
+        //private void PickUpItem()
+        //{
+        //    Inventory.Inventory.instance.Add(item);
+        //}
+
+        //[PunRPC]
+        //private void PickUpCard()
+        //{
+        //    Inventory.Inventory.instance.Add(card);
+        //}
     }
 }
 
