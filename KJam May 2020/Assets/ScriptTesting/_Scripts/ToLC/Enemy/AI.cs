@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -17,6 +18,9 @@ namespace ToLC.Enemy
 
         private bool hasAggro = false;
 
+        public float currentHealth = 0;
+        public float health = 30;
+
         private float distance;
 
         public float aggroRange, attackRange, moveSpeed;
@@ -25,18 +29,31 @@ namespace ToLC.Enemy
         {
             agent = gameObject.GetComponent<NavMeshAgent>();
             agent.speed = moveSpeed;
+            currentHealth = health;
         }
 
         private void Update()
         {
-            if (!hasAggro)
+            if (currentHealth <= 0)
             {
-                CheckForEnenyTargets();
+                Die();
             }
-            else
-            {
-                MoveToAggroTarget();
-            }
+
+            //if (!hasAggro)
+            //{
+            //    CheckForEnenyTargets();
+            //}
+            //else
+            //{
+            //    MoveToAggroTarget();
+            //}
+
+            Debug.Log(currentHealth);
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject);
         }
 
         private void CheckForEnenyTargets()
@@ -64,6 +81,11 @@ namespace ToLC.Enemy
             {
                 agent.SetDestination(aggroTarget.position);
             }
+        }
+
+        public void TakeDamage(float damage)
+        {
+            currentHealth = currentHealth - damage;
         }
     }
 }
