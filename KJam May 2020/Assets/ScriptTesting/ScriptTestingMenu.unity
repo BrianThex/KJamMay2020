@@ -426,7 +426,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4039707629535578071}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1880109830}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14d51f006c742c3418d33d03eca878e3, type: 3}
@@ -574,6 +574,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1880109830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4039707630330146438, guid: 45165664d9bcfcf45b74da7056bf0bb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4039707629535578071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1880109831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880109830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 20
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &4039707629535578071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -766,20 +794,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 6235556542398246796, guid: 45165664d9bcfcf45b74da7056bf0bb4,
-        type: 3}
-      propertyPath: viewIdField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235556542398246796, guid: 45165664d9bcfcf45b74da7056bf0bb4,
-        type: 3}
-      propertyPath: OwnershipTransfer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8093524053927794865, guid: 45165664d9bcfcf45b74da7056bf0bb4,
         type: 3}
       propertyPath: viewIdField
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45165664d9bcfcf45b74da7056bf0bb4, type: 3}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe7fda7f0431de479ac77bd8f148fa3, type: 3}
+  m_Name: New LootSet
+  m_EditorClassIdentifier: 
+  Loot:
+    standardLoot:
+    - {fileID: 11400000, guid: bfdbfabd6c37d2a4c80b31ce8a808c11, type: 2}
+    cardLoot:
+    - {fileID: 11400000, guid: a67ab84cf1b470241bd0561f68fbbf30, type: 2}
