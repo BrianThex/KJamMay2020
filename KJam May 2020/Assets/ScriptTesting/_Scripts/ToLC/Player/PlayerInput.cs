@@ -2,10 +2,7 @@
 using ToLC.Interactables;
 using UnityEngine;
 using Photon.Pun;
-using System;
-using System.Linq;
 using ToLC.Enemy;
-using TMPro;
 
 namespace ToLC.Player
 {
@@ -13,16 +10,13 @@ namespace ToLC.Player
 	{
 		public static PlayerInput instance;
 
-		[SerializeField] private Animator anim = null;
+		public HealthManager healthManager = null;
 
-		public bool isChest = true;
+		[SerializeField] private Animator anim = null;
 
 		public Interactable focus = null;
 
 		private Camera cam = null;
-
-		public float currentHealth = 0;
-		public float health = 100;
 
 		public float range = 20;
 
@@ -55,15 +49,10 @@ namespace ToLC.Player
 			inputState = InputState.GamePlay;
 			cam = Camera.main;
 			enemyLayerMask = LayerMask.NameToLayer("Enemy");
-			currentHealth = health;
 		}
 
 		private void Update()
 		{
-			if (currentHealth <= 0)
-			{
-				Die();
-			}
 
 			if (isAttacking && inputState == InputState.GamePlay)
 			{
@@ -88,16 +77,6 @@ namespace ToLC.Player
 						break;
 				}
 			}
-		}
-
-		private void Die()
-		{
-			Destroy(gameObject);
-		}
-
-		public void TakeDamage(float damage)
-		{
-			currentHealth = currentHealth - damage;
 		}
 
 		private void GamePlayMouseInput()
@@ -140,7 +119,7 @@ namespace ToLC.Player
 					//		break;
 					//}
 
-					List<AI> enemies = new List<AI>();
+					List<Enemy.AI> enemies = new List<Enemy.AI>();
 
 					Quaternion startingAngle = Quaternion.AngleAxis(-60, Vector3.up);
 					Quaternion stepAngle = Quaternion.AngleAxis(5, Vector3.up);
@@ -155,7 +134,7 @@ namespace ToLC.Player
 
 						if (Physics.Raycast(pos, direction, out hit, range))
 						{
-							var enemy = hit.collider.GetComponent<AI>();  
+							var enemy = hit.collider.GetComponent<Enemy.AI>();
 							if (enemy)
 							{
 								//Enemy takes damage
@@ -163,14 +142,16 @@ namespace ToLC.Player
 								{
 									enemies.Add(enemy);
 									Debug.Log(enemy.transform.gameObject.name);
-									enemy.TakeDamage(damage);
 								}
 							}
 						}
 						direction = stepAngle * direction;
 					}
+					for (int e = 0; e < enemies.Count; e++)
+					{
+						enemies[e].healthManager.TakeDamage(damage);
+					}
 					attackCooldown = baseCooldown;
-					isAttacking = false;
 				}
 			}
 		}

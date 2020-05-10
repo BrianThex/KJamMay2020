@@ -1,15 +1,15 @@
-﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using ToLC.Player;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.PlayerLoop;
 
 namespace ToLC.Enemy
 {
     [RequireComponent(typeof(NavMeshAgent))]
     public class AI : MonoBehaviour
     {
+        public HealthManager healthManager = null;
+
         private NavMeshAgent agent = null;
 
         private Collider[] rangeColliders;
@@ -18,8 +18,13 @@ namespace ToLC.Enemy
 
         private bool hasAggro = false;
 
-        public float currentHealth = 0;
-        public float health = 30;
+        public float range = 20;
+
+        public float damage = 5;
+
+        public float attackCooldown = 0;
+
+        public float baseCooldown = 1f;
 
         private float distance;
 
@@ -29,26 +34,74 @@ namespace ToLC.Enemy
         {
             agent = gameObject.GetComponent<NavMeshAgent>();
             agent.speed = moveSpeed;
-            currentHealth = health;
+            attackCooldown = baseCooldown;
         }
 
         private void Update()
         {
-            if (currentHealth <= 0)
+            attackCooldown -= Time.deltaTime;
+
+            if (!hasAggro)
             {
-                Die();
+                CheckForEnenyTargets();
             }
+            else
+            {
+                if (aggroTarget == null)
+                {
+                    hasAggro = false;
+                    return;
+                }
 
-            //if (!hasAggro)
-            //{
-            //    CheckForEnenyTargets();
-            //}
-            //else
-            //{
-            //    MoveToAggroTarget();
-            //}
+                transform.LookAt(aggroTarget);
+                MoveToAggroTarget();
 
-            Debug.Log(currentHealth);
+                if (distance <= attackRange)
+                {
+                    if (attackCooldown <= 0)
+                    {
+                        AttackPlayer();
+                    }
+                }
+            }
+        }
+
+        private void AttackPlayer()
+        {
+            List<PlayerInput> enemies = new List<PlayerInput>();
+
+            Quaternion startingAngle = Quaternion.AngleAxis(-60, Vector3.up);
+            Quaternion stepAngle = Quaternion.AngleAxis(5, Vector3.up);
+
+            RaycastHit hit;
+            Quaternion angle = transform.rotation * startingAngle;
+            Vector3 direction = angle * Vector3.forward;
+            var pos = new Vector3(transform.position.x, .5f, transform.position.z);
+            for (var i = 0; i < 24; i++)
+            {
+                //Debug.DrawRay(pos, direction * range, Color.red, 100);
+
+                if (Physics.Raycast(pos, direction, out hit, range))
+                {
+                    var enemy = hit.collider.GetComponent<PlayerInput>();
+                    if (enemy)
+                    {
+                        //Adding enemy to list
+                        if (!enemies.Contains(enemy))
+                        {
+                            enemies.Add(enemy);
+                            Debug.Log(enemy.transform.gameObject.name);
+                        }
+                    }
+                }
+                direction = stepAngle * direction;
+            }
+            // enemy takes damage
+            for (int e = 0; e < enemies.Count; e++)
+            {
+                enemies[e].healthManager.TakeDamage(damage);
+            }
+            attackCooldown = baseCooldown;
         }
 
         private void Die()
@@ -81,11 +134,6 @@ namespace ToLC.Enemy
             {
                 agent.SetDestination(aggroTarget.position);
             }
-        }
-
-        public void TakeDamage(float damage)
-        {
-            currentHealth = currentHealth - damage;
         }
     }
 }

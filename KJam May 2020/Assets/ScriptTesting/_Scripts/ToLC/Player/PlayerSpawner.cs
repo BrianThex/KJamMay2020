@@ -34,6 +34,12 @@ namespace ToLC.Network
                 spawnPos = spawnPos2;
             }
 
+            StartCoroutine(Spawn());
+        }
+
+        private IEnumerator Spawn()
+        {
+            yield return new WaitForEndOfFrame();
             playerUser = PhotonNetwork.Instantiate(playerPrefab.name, spawnPos.position, Quaternion.identity);
         }
     }

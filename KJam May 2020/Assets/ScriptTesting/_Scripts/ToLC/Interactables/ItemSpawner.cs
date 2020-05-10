@@ -1,7 +1,4 @@
 ﻿using Photon.Pun;
-using Photon.Realtime;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using ToLC.Interactables.Items;
 using ToLC.Player;
@@ -11,7 +8,11 @@ namespace ToLC.Interactables
 {
     public class ItemSpawner : MonoBehaviourPun
     {
-        [SerializeField] private LootSet lootSet;
+        [SerializeField] private LootSet lootSet = null;
+
+        public bool onlySpawnOnce = true;
+
+        private bool hasSpawned = false;
 
         [Range(0, 100)]
         public int addDropChance = 0;
@@ -19,34 +20,57 @@ namespace ToLC.Interactables
         private void Start()
         {
             //photonView.RPC("SpawnLoot", RpcTarget.MasterClient);
-            SpawnLoot();
+            //SpawnLoot();
         }
 
         [PunRPC]
         public void SpawnLoot()
         {
-            foreach (Item item in lootSet.Loot.standardLoot)
+            if (onlySpawnOnce)
             {
-
-                GameObject loot = PhotonNetwork.Instantiate(item.prefab.name, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.Euler(-90, 0, 0));
-                Rigidbody rb = loot.GetComponent<Rigidbody>();
-                ItemPickup ip = loot.GetComponent<ItemPickup>();
-                ip.item = item;
-                //rb.AddExplosionForce(20, new Vector3(transform.position.x, 2, transform.position.z), 5, 10);
-                rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
-                Debug.Log("Loot obj to spawn" + loot.name);
+                if (!hasSpawned)
+                {
+                    photonView.RPC("Spawn", RpcTarget.All);
+                }
+            }
+            else
+            {
+                photonView.RPC("Spawn", RpcTarget.All);
             }
 
-            foreach (Card card in lootSet.Loot.cardLoot)
+        }
+
+        [PunRPC]
+        public void Spawn()
+        {
+            if (lootSet.Loot.standardLoot.Count() > 0)
             {
-                GameObject loot = PhotonNetwork.Instantiate(card.prefab.name, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.Euler(-90, 0, 0));
-                Rigidbody rb = loot.GetComponent<Rigidbody>();
-                ItemPickup ip = loot.GetComponent<ItemPickup>();
-                ip.card = card;
-                rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
-                //rb.AddExplosionForce(20, new Vector3(transform.position.x, 2, transform.position.z), 5, 10);
-                Debug.Log("Loot obj to spawn" + loot.name);
+                foreach (Item item in lootSet.Loot.standardLoot)
+                {
+
+                    GameObject loot = Instantiate(item.prefab, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.Euler(-90, 0, 0));
+                    Rigidbody rb = loot.GetComponent<Rigidbody>();
+                    ItemPickup ip = loot.GetComponent<ItemPickup>();
+                    ip.item = item;
+                    //rb.AddExplosionForce(20, new Vector3(transform.position.x, 2, transform.position.z), 5, 10);
+                    rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+                    Debug.Log("Loot obj to spawn" + loot.name);
+                }
             }
+            if (lootSet.Loot.cardLoot.Count() > 0)
+            {
+                foreach (Card card in lootSet.Loot.cardLoot)
+                {
+                    GameObject loot = Instantiate(card.prefab, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.Euler(-90, 0, 0));
+                    Rigidbody rb = loot.GetComponent<Rigidbody>();
+                    ItemPickup ip = loot.GetComponent<ItemPickup>();
+                    ip.card = card;
+                    rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+                    //rb.AddExplosionForce(20, new Vector3(transform.position.x, 2, transform.position.z), 5, 10);
+                    Debug.Log("Loot obj to spawn" + loot.name);
+                }
+            }
+            hasSpawned = true;
         }
     }
 }

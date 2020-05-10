@@ -1,7 +1,4 @@
 ﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace ToLC.Player
@@ -11,7 +8,7 @@ namespace ToLC.Player
     {
         public static Movement instance;
 
-        [SerializeField] private Animator anim;
+        [SerializeField] private Animator anim = null;
 
         [SerializeField] private float moveSpeed = 0f;
 
