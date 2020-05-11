@@ -1,4 +1,6 @@
 ﻿using Photon.Pun;
+using ToLC.Player;
+using ToLC.Player.Inventory;
 using UnityEngine;
 
 namespace ToLC.Interactables
@@ -13,6 +15,7 @@ namespace ToLC.Interactables
 
         private bool hasInteracted = false;
 
+        [PunRPC]
         public virtual void Interact()
         {
             // This will be for our over writes
@@ -24,12 +27,11 @@ namespace ToLC.Interactables
 
         }
 
-        public void OnFocused(Transform playerTransform)
+        public void OnFocused(Transform playerTransform )
         {
             isFocus = true;
             player = playerTransform;
             hasInteracted = false;
-
 
             if (isFocus && !hasInteracted)
             {

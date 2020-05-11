@@ -7,7 +7,7 @@ namespace ToLC.Interactables.Items
     {
         new public string name = "New Card";
         public GameObject prefab = null;
-        public Sprite artwork = null;
+        public Sprite icon = null;
         public bool isDefaultItem = false;
         public ParticleSystem Particles = null;
 

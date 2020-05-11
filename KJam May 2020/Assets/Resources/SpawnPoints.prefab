@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5397820112366267089, guid: b9ddd8dc23e65834694e22fc767f6801,
     type: 3}
+  UIPrefab: {fileID: 4039707630330146438, guid: 45165664d9bcfcf45b74da7056bf0bb4,
+    type: 3}
   spawnPos1: {fileID: 2804475701411886971}
   spawnPos2: {fileID: 2804475701116650842}
 --- !u!1 &2804475701116650821
