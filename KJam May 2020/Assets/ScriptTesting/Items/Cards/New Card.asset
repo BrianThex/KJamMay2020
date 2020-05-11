@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279f32f17b563e44580391bbf2529647, type: 3}
   m_Name: New Card
   m_EditorClassIdentifier: 
-  name: New Card
+  name: Helmet
   prefab: {fileID: 3579574669893513575, guid: 6562c59d3b3bbf54fb09ff7d92e7416d, type: 3}
-  artwork: {fileID: 0}
+  icon: {fileID: 21300000, guid: 04f0ae01d8d6d4149b896ad6fe01a1cb, type: 3}
   isDefaultItem: 0
   Particles: {fileID: 0}
   damage: 0

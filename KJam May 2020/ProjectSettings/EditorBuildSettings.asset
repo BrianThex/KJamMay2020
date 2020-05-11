@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SimpleLevel.unity
     guid: bb0584926730bd448ae08fb35c749115
   - enabled: 1
-    path: Assets/ScriptTesting/ScriptTestingLevel.unity
-    guid: 1bd0f3196623dd441899883493a623cb
+    path: Assets/Scenes/Cathedral_Ward.unity
+    guid: ae876d0515007bb44884b114664c408f
   m_configObjects: {}

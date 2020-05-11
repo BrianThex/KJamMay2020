@@ -3,6 +3,7 @@ using System.Collections;
 using ToLC.Interactables.Items;
 using ToLC.Interactables;
 using UnityEngine;
+using ToLC.Player.Inventory;
 
 namespace ToLC.Player
 {
@@ -12,10 +13,11 @@ namespace ToLC.Player
         public Card card = null;
         public override void Interact()
         {
-            base.Interact();
-            //photonView.RPC("PickUp", RpcTarget.All, gameObject);
-            StartCoroutine(DestroyMe());
+			base.Interact();
+			//photonView.RPC("PickUp", RpcTarget.All, gameObject);
+			photonView.RPC("DestroyMe", RpcTarget.All);
         }
+
 
         private IEnumerator GetOwnerShip()
         {
@@ -23,57 +25,64 @@ namespace ToLC.Player
             yield return new WaitForEndOfFrame();
         }
 
-        private IEnumerator DestroyMe()
+		[PunRPC]
+		public IEnumerator DestroyMe()
         {
             yield return StartCoroutine(GetOwnerShip());
 
-            //if (photonView.IsMine)
-            //{
-            //    if (item != null)
-            //    {
-            //        Debug.Log("Player Picked up " + item.name);
-            //        bool hasPickedUp = Inventory.Inventory.instance.Add(item);
-            //        if (hasPickedUp)
-            //            PhotonNetwork.Destroy(gameObject);
-            //    }
-            //    if (card != null)
-            //    {
-            //        Debug.Log("Player Picked up " + card.name);
-            //        bool hasPickedUp = Inventory.Inventory.instance.Add(card);
-            //        if (hasPickedUp)
-            //            PhotonNetwork.Destroy(gameObject);
-            //    }
-            //}
-            //else
-            //    StartCoroutine(DestroyMe());
+			#region Mixing Animations Later?
 
-            if (item != null)
-            {
-                Debug.Log("Player Picked up " + item.name);
-                bool hasPickedUp = Inventory.Inventory.instance.Add(item);
-                if (hasPickedUp)
-                    Destroy(gameObject);
-            }
-            if (card != null)
-            {
-                Debug.Log("Player Picked up " + card.name);
-                bool hasPickedUp = Inventory.Inventory.instance.Add(card);
-                if (hasPickedUp)
-                    Destroy(gameObject);
-            }
-        }
+			//if (photonView.IsMine)
+			//{
+			//    if (item != null)
+			//    {
+			//        Debug.Log("Player Picked up " + item.name);
+			//        bool hasPickedUp = Inventory.Inventory.instance.Add(item);
+			//        if (hasPickedUp)
+			//            PhotonNetwork.Destroy(gameObject);
+			//    }
+			//    if (card != null)
+			//    {
+			//        Debug.Log("Player Picked up " + card.name);
+			//        bool hasPickedUp = Inventory.Inventory.instance.Add(card);
+			//        if (hasPickedUp)
+			//            PhotonNetwork.Destroy(gameObject);
+			//    }
+			//}
+			//else
+			//    StartCoroutine(DestroyMe());
 
-        //[PunRPC]
-        //private void PickUpItem()
-        //{
-        //    Inventory.Inventory.instance.Add(item);
-        //}
+			#endregion
 
-        //[PunRPC]
-        //private void PickUpCard()
-        //{
-        //    Inventory.Inventory.instance.Add(card);
-        //}
-    }
+			//if (item != null)
+			//{
+			//    Debug.Log("Player Picked up " + item.name);
+			//    bool hasPickedUp = Inventory.Inventory.instance.Add(item);
+			//    if (hasPickedUp)
+			//        Destroy(gameObject);
+			//}
+			if (card != null)
+			{
+				if (photonView.IsMine)
+				{
+					Debug.Log("Player Picked up " + card.name);
+					bool hasPickedUp = Inventory.Inventory.instance.Add(card);
+
+					if (hasPickedUp)
+					{
+						if (photonView.IsMine)
+						{
+							PhotonNetwork.Destroy(gameObject);
+						}
+					}
+				}
+				else
+				{
+					Debug.Log("I didn't add the card");
+				}
+
+			}
+		}
+	}
 }
 

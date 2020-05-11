@@ -25,6 +25,8 @@ namespace ToLC.Network
 
         private void Start()
         {
+            //GameObject go = PhotonNetwork.InstantiateSceneObject("Inventory", transform.position, Quaternion.identity);
+
             if (PhotonNetwork.IsMasterClient)
             {
                 spawnPos = spawnPos1;

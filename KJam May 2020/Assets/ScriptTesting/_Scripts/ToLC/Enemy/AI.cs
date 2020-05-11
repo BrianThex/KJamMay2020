@@ -10,6 +10,8 @@ namespace ToLC.Enemy
     {
         public HealthManager healthManager = null;
 
+        [SerializeField] Animator anim = null;
+
         private NavMeshAgent agent = null;
 
         private Collider[] rangeColliders;
@@ -68,6 +70,8 @@ namespace ToLC.Enemy
 
         private void AttackPlayer()
         {
+            anim.SetTrigger("horAttack");
+
             List<PlayerInput> enemies = new List<PlayerInput>();
 
             Quaternion startingAngle = Quaternion.AngleAxis(-60, Vector3.up);
@@ -132,7 +136,12 @@ namespace ToLC.Enemy
 
             if (distance <= aggroRange)
             {
+                anim.SetTrigger("isRunning");
                 agent.SetDestination(aggroTarget.position);
+            }
+            else
+            {
+                anim.ResetTrigger("isRunning");
             }
         }
     }

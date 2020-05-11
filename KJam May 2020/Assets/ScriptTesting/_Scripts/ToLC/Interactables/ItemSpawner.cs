@@ -30,12 +30,14 @@ namespace ToLC.Interactables
             {
                 if (!hasSpawned)
                 {
-                    photonView.RPC("Spawn", RpcTarget.All);
+                    photonView.RPC("Spawn", RpcTarget.MasterClient);
+                   
                 }
             }
             else
             {
-                photonView.RPC("Spawn", RpcTarget.All);
+                photonView.RPC("Spawn", RpcTarget.MasterClient);
+                
             }
 
         }
@@ -48,7 +50,7 @@ namespace ToLC.Interactables
                 foreach (Item item in lootSet.Loot.standardLoot)
                 {
 
-                    GameObject loot = Instantiate(item.prefab, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.Euler(-90, 0, 0));
+                    GameObject loot = PhotonNetwork.Instantiate(item.prefab.name, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.Euler(-90, 0, 0));
                     Rigidbody rb = loot.GetComponent<Rigidbody>();
                     ItemPickup ip = loot.GetComponent<ItemPickup>();
                     ip.item = item;
@@ -61,7 +63,7 @@ namespace ToLC.Interactables
             {
                 foreach (Card card in lootSet.Loot.cardLoot)
                 {
-                    GameObject loot = Instantiate(card.prefab, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.Euler(-90, 0, 0));
+                    GameObject loot = PhotonNetwork.Instantiate(card.prefab.name, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.Euler(-90, 0, 0));
                     Rigidbody rb = loot.GetComponent<Rigidbody>();
                     ItemPickup ip = loot.GetComponent<ItemPickup>();
                     ip.card = card;

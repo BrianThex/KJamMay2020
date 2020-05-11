@@ -163,7 +163,8 @@ namespace ToLC.Player
 			focus = null;
 		}
 
-		private void SetFocus(Interactable newFocus)
+		[PunRPC]
+		public void SetFocus(Interactable newFocus)
 		{
 			if (newFocus != focus)
 			{
@@ -171,7 +172,15 @@ namespace ToLC.Player
 					focus.OnDefocused();
 				focus = newFocus;
 			}
-			newFocus.OnFocused(gameObject.transform);
+				InteractFocus(newFocus);
+		}
+
+		[PunRPC]
+		public void InteractFocus(Interactable newFocus)
+		{
+			int ID = this.photonView.ViewID;
+			GameObject playerEntity = PhotonView.Find(ID).transform.gameObject;
+			newFocus.OnFocused(playerEntity.transform);
 		}
 	}
 }

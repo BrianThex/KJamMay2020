@@ -18,14 +18,55 @@ namespace ToLC.Menues
         [SerializeField] private GameObject lobbyWaitingText = null;
         [SerializeField] private GameObject lobbyStart = null;
 
+        [SerializeField] private GameObject p1Inventory = null;
+        [SerializeField] private GameObject p2Inventory = null;
+
         [SerializeField] private GameObject tradeMenu = null;
 
         private bool isConnecting = false;
+
+        public bool isInGame = true;
 
         private const string GameVersion = "v0.0.0.1";
         private const int MaxPlayersPerRoom = 2;
 
         private void Awake() => PhotonNetwork.AutomaticallySyncScene = true;
+
+        private void Update()
+        {
+            if (isInGame)
+            {
+
+                //if (Input.GetKeyDown(KeyCode.I))
+                //{
+                //    //photonView.RPC("SetInventoryMenu", RpcTarget.All);
+
+                //    SetInventoryMenu();
+
+                //    //if (p1Inventory.activeInHierarchy)
+                //    //{
+                //    //    photonView.RPC("CloseGlobalMenu", RpcTarget.All, "P1Inventory");
+                //    //}
+                //    //else
+                //    //{
+                //    //    photonView.RPC("OpenGlobalMenu", RpcTarget.All, "P1Inventory");
+                //    //}
+                //}
+            }
+        }
+
+        [PunRPC]
+        public void SetInventoryMenu()
+        {
+            if (p1Inventory.activeInHierarchy)
+            {
+                p1Inventory.SetActive(false);
+            }
+            else
+            {
+                p1Inventory.SetActive(true);
+            }
+        }
 
         public void FindOpponent()
         {
@@ -80,7 +121,7 @@ namespace ToLC.Menues
 
             if (playerCount != MaxPlayersPerRoom)
             {
-                waitingStatusText.text = "Waiting For Opponent";
+                waitingStatusText.text = "Waiting For Opponent...";
                 Debug.Log("Client is waiting for an opponent");
             }
             else
@@ -104,15 +145,35 @@ namespace ToLC.Menues
             }
         }
 
-        public void LoadRandomLevel()
+        public void LoadCatacombs()
         {
             photonView.RPC("CloseGlobalMenu", RpcTarget.All, "Lobby");
-            PhotonNetwork.LoadLevel("ScriptTestingLevel");
+            photonView.RPC("CloseGlobalMenu", RpcTarget.All, "P1Inventory");
+            photonView.RPC("CloseGlobalMenu", RpcTarget.All, "P2Inventory");
+
+            PhotonNetwork.LoadLevel("SimpleLevel");
+
+            isInGame = true;
+        }
+
+        public void LoadCathedral()
+        {
+            photonView.RPC("CloseGlobalMenu", RpcTarget.All, "Lobby");
+            photonView.RPC("CloseGlobalMenu", RpcTarget.All, "P1Inventory");
+            photonView.RPC("CloseGlobalMenu", RpcTarget.All, "P2Inventory");
+
+            PhotonNetwork.LoadLevel("Cathedral_Ward");
+
+            isInGame = true;
         }
 
         private void setLobby()
         {
             mainMenu.SetActive(false);
+
+            p1Inventory.SetActive(true);
+            p2Inventory.SetActive(true);
+
             lobby.SetActive(true);
             lobbyWaitingText.SetActive(true);
             lobbyStart.SetActive(false);
@@ -121,6 +182,10 @@ namespace ToLC.Menues
         private void setMasterLobby()
         {
             mainMenu.SetActive(false);
+
+            p1Inventory.SetActive(true);
+            p2Inventory.SetActive(true);
+
             lobby.SetActive(true);
             lobbyWaitingText.SetActive(false);
             lobbyStart.SetActive(true);
@@ -134,6 +199,12 @@ namespace ToLC.Menues
         }
 
         public void CloseTradeMenu()
+        {
+            photonView.RPC("CloseTrade", RpcTarget.MasterClient);
+        }
+
+        [PunRPC]
+        public void CloseTrade()
         {
             photonView.RPC("OpenGlobalMenu", RpcTarget.Others, "LobbyWaitingStatus");
             photonView.RPC("CloseGlobalMenu", RpcTarget.All, "Trade");
@@ -154,6 +225,12 @@ namespace ToLC.Menues
                 case "Lobby":
                     lobby.SetActive(true);
                     break;
+                case "P1Inventory":
+                    p1Inventory.SetActive(true);
+                    break;
+                case "P2Inventory":
+                    p2Inventory.SetActive(true);
+                    break;
             }
         }
 
@@ -170,6 +247,12 @@ namespace ToLC.Menues
                     break;
                 case "Lobby":
                     lobby.SetActive(false);
+                    break;
+                case "P1Inventory":
+                    p1Inventory.SetActive(false);
+                    break;
+                case "P2Inventory":
+                    p2Inventory.SetActive(false);
                     break;
             }
         }
