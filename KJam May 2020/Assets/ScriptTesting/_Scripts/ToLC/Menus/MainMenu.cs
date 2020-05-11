@@ -1,5 +1,6 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
+using System.Security;
 using TMPro;
 using UnityEngine;
 
@@ -23,6 +24,10 @@ namespace ToLC.Menues
 
         [SerializeField] private GameObject tradeMenu = null;
 
+        [SerializeField] private GameObject winGameScreen = null;
+        [SerializeField] private GameObject winButtons = null;
+        [SerializeField] private GameObject winWaitText = null;
+
         private bool isConnecting = false;
 
         public bool isInGame = true;
@@ -30,12 +35,27 @@ namespace ToLC.Menues
         private const string GameVersion = "v0.0.0.1";
         private const int MaxPlayersPerRoom = 2;
 
+        public int EnemiesToKill = 15;
+
+
         private void Awake() => PhotonNetwork.AutomaticallySyncScene = true;
 
         private void Update()
         {
             if (isInGame)
             {
+                if (EnemiesToKill <= 0)
+                {
+                    // Display Win Screen
+                    photonView.RPC("CloseGlobalMenu", RpcTarget.All, "P1Inventory");
+                    photonView.RPC("CloseGlobalMenu", RpcTarget.All, "P2Inventory");
+                    photonView.RPC("CloseGlobalMenu", RpcTarget.All, "WinGame");
+                    if (!PhotonNetwork.IsMasterClient)
+                    {
+                        winButtons.SetActive(false);
+                        winWaitText.SetActive(true);
+                    }
+                }
 
                 //if (Input.GetKeyDown(KeyCode.I))
                 //{
@@ -66,6 +86,19 @@ namespace ToLC.Menues
             {
                 p1Inventory.SetActive(true);
             }
+        }
+
+        public void GoToMenu()
+        {
+            photonView.RPC("OpenGlobalMenu", RpcTarget.All, "Lobby");
+            photonView.RPC("CloseGlobalMenu", RpcTarget.All, "P1Inventory");
+            photonView.RPC("CloseGlobalMenu", RpcTarget.All, "P2Inventory");
+            photonView.RPC("CloseGlobalMenu", RpcTarget.All, "WinGame");
+
+
+            PhotonNetwork.LoadLevel("SimpleLevel");
+
+            isInGame = true;
         }
 
         public void FindOpponent()
@@ -231,6 +264,9 @@ namespace ToLC.Menues
                 case "P2Inventory":
                     p2Inventory.SetActive(true);
                     break;
+                case "WinGame":
+                    winGameScreen.SetActive(true);
+                    break;
             }
         }
 
@@ -253,6 +289,9 @@ namespace ToLC.Menues
                     break;
                 case "P2Inventory":
                     p2Inventory.SetActive(false);
+                    break;
+                case "WinGame":
+                    winGameScreen.SetActive(false);
                     break;
             }
         }
