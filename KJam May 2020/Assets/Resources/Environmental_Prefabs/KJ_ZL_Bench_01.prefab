@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 464810891984803542}
   - component: {fileID: 8874432900321488096}
   - component: {fileID: 2888171715261124633}
+  - component: {fileID: 4588790790440400426}
   m_Layer: 0
   m_Name: KJ_ZL_Bench_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &464810891984803542
 Transform:
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4588790790440400426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3470039815643882693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0329332, y: 0.89205575, z: 0.46361685}
+  m_Center: {x: -0.016466618, y: 0.43422687, z: -0.01679428}

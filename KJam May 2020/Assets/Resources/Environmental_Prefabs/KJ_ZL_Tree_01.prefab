@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7560857601726584428}
   - component: {fileID: 4180453400802634728}
   - component: {fileID: 9005431829703829227}
+  - component: {fileID: 7550868086568855686}
   m_Layer: 0
   m_Name: KJ_ZL_Tree_01
   m_TagString: Untagged
@@ -80,6 +81,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &7550868086568855686
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551301231089517559}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.39
+  m_Center: {x: 0.37, y: -0.64, z: -0.35}
 --- !u!1 &7495925759520625898
 GameObject:
   m_ObjectHideFlags: 0
